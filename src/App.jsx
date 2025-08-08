@@ -94,15 +94,14 @@ function App() {
   }
 
   return (
-    <>
-      <div className="text-4xl font-bold text-center mt-5">
-        {" "}
-        Chat For Job Application and Interviews
-      </div>
-      <div>
+    <div className="bg-black min-h-screen ">
+      <p className="text-3xl p-5 bg-gradient-to-bl text-center from-[#699099] to-[#95c8f8] bg-clip-text text-transparent font-semibold">
+          Chat For Job Application and Interviews
+        </p>
+      <div className="p-5">
         <Chat messages={messages} onSend={handleContentSend} />
-      </div>
-    </>
+      </div>{" "}
+    </div>
   );
 }
 
