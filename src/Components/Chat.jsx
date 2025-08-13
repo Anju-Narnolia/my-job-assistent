@@ -42,22 +42,25 @@ export default function Chat({ messages, onSend }) {
                   role === "user" ? "justify-end" : "justify-start"
                 }`}
               >
-                <p
-                  className={`text-md p-2 backdrop-blur-md border border-white/10 shadow-lg ${
-                    role === "assistant"
-                      ? "bg-white/10 text-white rounded-md mr-32"
-                      : "bg-white/5 text-gray-200 rounded-md ml-32"
-                  }`}
-                  style={{
-                    boxShadow:
-                      role === "user"
-                        ? "0px 0px 20px rgba(0, 132, 255, 0.4)"
-                        : "0px 0px 15px rgba(0,255,255,0.5)",
-                  }}
-                >
-                  {" "}
-                  {content}
-                </p>
+                <div>
+                  
+                  <p
+                    className={`text-md p-2 backdrop-blur-md border border-white/10 shadow-lg ${
+                      role === "assistant"
+                        ? "bg-white/10 text-white rounded-md mr-32"
+                        : "bg-white/5 text-gray-200 rounded-md ml-32"
+                    }`}
+                    style={{
+                      boxShadow:
+                        role === "user"
+                          ? "0px 0px 20px rgba(0, 132, 255, 0.4)"
+                          : "0px 0px 15px rgba(0,255,255,0.5)",
+                    }}
+                  >
+                    {" "}
+                    {content}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
