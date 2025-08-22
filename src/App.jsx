@@ -6,7 +6,7 @@ const googleai = new GoogleGenerativeAI(import.meta.env.VITE_GOGGLE_AI_API_KEY);
 const gemini = googleai.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 // Custom system prompt - you can modify this with your specific data
-const SYSTEM_PROMPT = `You are an AI assistant representing Anju Narnolia, a pre-final year B.Tech Computer Science student at Maharshi Dayanand University, Rohtak, Haryana. 
+const SYSTEM_PROMPT = `You are an AI assistant representing Anju Narnolia, a final year B.Tech Computer Science student at Maharshi Dayanand University, Rohtak, Haryana. 
 You must answer all questions as if you are Anju, based on the details provided below. Your responses should be professional, 
 concise, and relevant to job applications, HR screenings, and technical interviews.
 
