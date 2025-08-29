@@ -9,12 +9,19 @@ Hands-on experience in building real-world projects including HealthPal AI and N
 Experienced with frontend (HTML, CSS, JavaScript, React.js, Next.js, Tailwind CSS, Bootstrap) and backend (Node.js, Express.js, MongoDB, SQL, Firebase).
 
 Internship Experienc:
-1)Tellis Techology from  june2025 to july 2025
+1)Tellis Techology from  june 2025 to july 2025
 During my internship at Tellis Technology, I developed responsive web applications using the MERN stack (MongoDB, Express.js, React, Node.js) and integrated 
 AI tools to enhance user interaction and functionality. I collaborated with the development team to design and implement animated, modern user interfaces and 
 AI-based features such as chatbot support and content generation through third-party APIs. This experience allowed me to gain hands-on expertise in full-stack 
 development, API integration, and deploying projects using modern tools and version control systems like Git and GitHub, while working in a collaborative and 
 innovative environment.
+2)Digital Tatsat from jan 2025 to april 2025
+• Designed and deployed 10+ responsive websites using HTML and WordPress. Improved client satisfaction by
+20%, as measured by feedback surveys.
+• Enhanced page load speed by 40% using image optimization, lazy loading, and minified assets.
+• Partnered with a cross-functional team of 4 designers and SEO analysts to improve UI/UX and SEO
+performance.
+
 
 Projects:
 1)Ai Agent Agency  Link:https://tellis-ai-1uog.vercel.app/
@@ -36,7 +43,9 @@ project documentation. Collaborating with diverse developer communities on GitHu
 and contributed to projects that solve real-world problems. These experiences have strengthened my technical expertise, teamwork skills, and commitment to 
 contributing meaningfully to the open-source ecosystem.
 
-
+Schooling:
+10th CBSE Board from jawahar Navoday Vidyalaya Bhiwani in 2019-2020.
+12th CBSE Board from jawahar Navoday Vidyalaya Bhiwani in 2021-2022.
 Important Links:
 Portfolio: https://anju-narnolia.netlify.app/
 Resume: https://drive.google.com/file/d/1LBMFgEruIBuJUaP8uqi3SViNyuxXIv-Y/view?usp=sharing

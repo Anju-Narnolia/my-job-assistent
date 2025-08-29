@@ -34,16 +34,15 @@ export default function Chat({ messages, onSend }) {
     }
   }
   return (
-    <div className="flex items-center justify-center">
-      <div className="p-[2px] rounded-3xl  w-2/3  dark:bg-gradient-to-bl from-[#05294a] via-[#0b312d] to-[#01111f] bg-gradient-to-bl ">
+      <div className="p-[2px] rounded-3xl  lg:mx-20 dark:bg-gradient-to-bl from-[#05294a] via-[#0b312d] to-[#01111f] bg-gradient-to-bl ">
         <div
-          className="flex flex-col h-[45rem] overflow-y-auto p-4  justify-between bg-[#fefefe]
-      dark:bg-gradient-to-b from-[#0a0f1a] to-[#000] rounded-3xl"
+          className="flex flex-col overflow-y-auto p-4  justify-between bg-[#fefefe]
+          dark:bg-gradient-to-b from-[#0a0f1a] to-[#000] rounded-3xl"
           style={{
             boxShadow: "-10px -10px 40px rgba(0, 132, 255, 0.25)",
           }}
         >
-          <div className="flex flex-col  overflow-y-auto gap-2 ">
+          <div className="flex flex-col  overflow-y-auto gap-2 h-[35rem]">
             {[WELCOME_MESSAGE, ...messages].map(({ role, content }, index) => (
               <div
                 key={index}
@@ -121,6 +120,5 @@ export default function Chat({ messages, onSend }) {
           </div>
         </div>
       </div>
-    </div>
   );
 }

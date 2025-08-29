@@ -1,93 +1,91 @@
-import Chat from "./Components/Chat";
-import { Assistant as OpenAIAssistant } from "./assistant/openai";
-import { Assistant as GoogleAssistant } from "./assistant/googleai";
-import { Assistant as DeepSeekAssistant } from "./assistant/deepseekai";
-import { useState, useEffect } from "react";
+// import Chat from "./Components/Chat";
+import { Sidebar, SidebarBody, SidebarLink } from "./Components/Sidebar";
+import { motion as Motion } from "framer-motion";
+import Dashboard from "./Components/Dashboard";
+import cn from "../lib/utils";
+import { useState } from "react";
 
-function App() {
-  const [provider, setProvider] = useState("google"); // 'openai' | 'google'
-  const assistant =
-    provider === "google"
-      ? new GoogleAssistant()
-      : provider == "openai"
-      ? new OpenAIAssistant()
-      : provider == "deepseek"
-      ? new DeepSeekAssistant()
-      : "";
-  const [messages, setMessages] = useState([]);
-
-  // Start chat lazily on first send to avoid duplicate mount-time calls
-
-  function addMessage(message) {
-    setMessages((prevMessages) => [...prevMessages, message]);
-  }
-
-  async function handleContentSend(content) {
-    addMessage({ content, role: "user" });
-    try {
-      const result = await assistant.chat(content);
-      addMessage({ content: result, role: "assistant" });
-    } catch (error) {
-      console.log(error);
-      addMessage({
-        content:
-          error?.message ===
-          "Rate limited by OpenAI. Please wait a moment and try again."
-            ? error.message
-            : "Sorry, I couldn't process your request. Please try again!",
-        role: "assistant",
-      });
-    }
-  }
-  const [dark, setDark] = useState(false);
-  useEffect(() => {
-    if (localStorage.theme === "dark") {
-      document.documentElement.classList.add("dark");
-      setDark(true);
-    }
-  }, []);
-
-  // Toggle theme
-  const toggleTheme = () => {
-    if (dark) {
-      document.documentElement.classList.remove("dark");
-      localStorage.theme = "light";
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.theme = "dark";
-    }
-    setDark(!dark);
-  };
+export default function App() {
   return (
-    <div className="dark:bg-black min-h-screen bg-gray-50">
+    <div className="dark:bg-black bg-gray-50 min-h-screen">
       <p className="text-3xl p-3 bg-gradient-to-bl text-center from-[#54757c] to-[#72b3f0] bg-clip-text text-transparent font-semibold">
         My Job Assistant
       </p>
-      <div className="flex justify-center p-2 gap-3">
-        <div className="flex items-center gap-3">
-          <label className="dark:text-white/70 text-xl">Provider</label>
-          <select
-            className="dark:bg-white/10 bg-gray-300 dark:text-white/80 border border-white/10 rounded  p-2"
-            value={provider}
-            onChange={(e) => setProvider(e.target.value)}
-          >
-            <option value="deepseek"> Deepseek AI</option>
-            <option value="google">Google (Gemini)</option>
-            <option value="openai">OpenAI</option>
-          </select>
-        </div>
-        <button
-          onClick={toggleTheme}
-          className="p-2 rounded-md shadow-md bg-gray-200 dark:bg-gray-700 transition"
-        >
-          {dark ? " Dark 🌙 " : " Light ☀️"}
-        </button>
-      </div>
-      <div className="p-5">
-        <Chat messages={messages} onSend={handleContentSend} />
-      </div>{" "}
+      <SidebarDemo />
     </div>
   );
 }
 
-export default App;
+
+
+export function SidebarDemo() {
+  const links = [];
+  const [open, setOpen] = useState(false);
+  return (
+    <div
+      className={cn(
+        "mx-auto flex w-full h-full flex-1 flex-col overflow-hidden rounded-md border border-neutral-200 bg-gray-100 md:flex-row dark:border-neutral-700 dark:bg-neutral-800",
+        // for your use case, use `h-screen` instead of `h-[60vh]`
+        "h-[93vh]"
+      )}
+    >
+      <Sidebar open={open} setOpen={setOpen}>
+        <SidebarBody className="justify-between gap-10">
+          <div className="flex flex-1 flex-col overflow-x-hidden overflow-y-auto">
+            {open ? <Logo /> : <LogoIcon />}
+            <div className="mt-8 flex flex-col gap-2">
+              {links.map((link, idx) => (
+                <SidebarLink key={idx} link={link} />
+              ))}
+            </div>
+          </div>
+          <div>
+            <SidebarLink
+              link={{
+                label: "Anju Narnolia",
+                href: "/",
+                icon: (
+                  <img
+                    src="https://anju-narnolia.netlify.app/static/media/myPhoto.817151b8a0a59d40ced8.jpg"
+                    className="h-7 w-7 shrink-0 rounded-full"
+                    width={50}
+                    height={50}
+                    alt="Avatar"
+                  />
+                ),
+              }}
+            />
+          </div>
+        </SidebarBody>
+      </Sidebar>
+      <Dashboard />
+    </div>
+  );
+}
+export const Logo = () => {
+  return (
+    <a
+      href="/"
+      className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black"
+    >
+      <div className="h-5 w-6 shrink-0 rounded-tl-lg rounded-tr-sm rounded-br-lg rounded-bl-sm bg-black dark:bg-white" />
+      <Motion.span
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="font-medium whitespace-pre text-black dark:text-white"
+      >
+        AI Assistant
+      </Motion.span>
+    </a>
+  );
+};
+export const LogoIcon = () => {
+  return (
+    <a
+      href="#"
+      className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal text-black"
+    >
+      <div className="h-5 w-6 shrink-0 rounded-tl-lg rounded-tr-sm rounded-br-lg rounded-bl-sm bg-black dark:bg-white" />
+    </a>
+  );
+};
