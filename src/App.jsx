@@ -1,12 +1,19 @@
 import Chat from "./Components/Chat";
 import { Assistant as OpenAIAssistant } from "./assistant/openai";
 import { Assistant as GoogleAssistant } from "./assistant/googleai";
+import { Assistant as DeepSeekAssistant } from "./assistant/deepseekai";
 import { useState, useEffect } from "react";
 
 function App() {
   const [provider, setProvider] = useState("google"); // 'openai' | 'google'
   const assistant =
-    provider === "google" ? new GoogleAssistant() : new OpenAIAssistant();
+    provider === "google"
+      ? new GoogleAssistant()
+      : provider == "openai"
+      ? new OpenAIAssistant()
+      : provider == "deepseek"
+      ? new DeepSeekAssistant()
+      : "";
   const [messages, setMessages] = useState([]);
 
   // Start chat lazily on first send to avoid duplicate mount-time calls
@@ -64,6 +71,7 @@ function App() {
             value={provider}
             onChange={(e) => setProvider(e.target.value)}
           >
+            <option value="deepseek"> Deepseek AI</option>
             <option value="google">Google (Gemini)</option>
             <option value="openai">OpenAI</option>
           </select>
