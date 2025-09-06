@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  apiBaseUrl: "http://localhost:5000",
+  apiBaseUrl: "https://my-job-assistent-server.onrender.com",
 };
 
 const configSlice = createSlice({
