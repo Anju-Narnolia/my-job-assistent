@@ -5,6 +5,7 @@ import { Sidebar, SidebarBody, SidebarLink } from "../Components/Sidebar";
 import cn from "../../lib/utils";
 import { Icon360, Icon3dCubeSphere } from "@tabler/icons-react";
 import { useSelector } from "react-redux";
+import { Link, Links } from "react-router-dom";
 
 export default function DemoPage() {
   const [open, setOpen] = useState(false);
@@ -114,12 +115,11 @@ export default function DemoPage() {
                     link={{
                       label: formatDate(date),
                       onClick: () => handleDateClick(date),
-                      href: "",
                       icon: <Icon360 />,
                     }}
                     className={
                       selectedDate === date
-                        ? "bg-gray-300 dark:bg-gray-700 cursor-pointer"
+                        ? "bg-gray-300 dark:bg-gray-700 cursor-pointer rounded p-1"
                         : "cursor-pointer"
                     }
                   />
@@ -131,7 +131,7 @@ export default function DemoPage() {
             <SidebarLink
               link={{
                 label: name,
-                href: "/chat",
+                Links: "/",
                 icon: (
                   <img
                     src="https://anju-narnolia.netlify.app/static/media/myPhoto.817151b8a0a59d40ced8.jpg"
@@ -158,10 +158,7 @@ export default function DemoPage() {
 }
 
 export const Logo = () => (
-  <a
-    href="/"
-    className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal dark:text-white text-black"
-  >
+  <p className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal dark:text-white text-black">
     <Icon3dCubeSphere />
     <Motion.span
       initial={{ opacity: 0 }}
@@ -170,14 +167,14 @@ export const Logo = () => (
     >
       AI Chat Assistant
     </Motion.span>
-  </a>
+  </p>
 );
 
 export const LogoIcon = () => (
-  <a
-    href="/chat"
+  <Link
+    to="/chat"
     className="relative z-20 flex items-center space-x-2 py-1 text-sm font-normal dark:text-white text-black"
   >
     <Icon3dCubeSphere />
-  </a>
+  </Link>
 );

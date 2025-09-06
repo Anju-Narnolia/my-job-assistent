@@ -9,7 +9,13 @@ dotenv.config();
 const app = express();
 
 //middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://my-job-assistent.vercel.app"], // your frontend domain
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 // test route

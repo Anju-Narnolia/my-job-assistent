@@ -93,11 +93,12 @@ export default function Chat({ messages, onSend, loading = false }) {
                   {/*  timestamps */}
                   <div className="text-xs text-gray-400 mt-1">
                     {time
-                      ? new Date(time).toLocaleTimeString([], {
+                      ? new Date(time).toLocaleTimeString("en-IN", {
                           hour: "2-digit",
                           minute: "2-digit",
+                          timeZone: "Asia/Kolkata", // 👈 forces IST (fixes Render/Vercel UTC issue)
                         })
-                      : "00:00"}
+                      : ""}
                   </div>
                 </div>
               </div>
