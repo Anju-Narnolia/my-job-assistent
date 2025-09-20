@@ -10,7 +10,7 @@ Experienced with frontend (HTML, CSS, JavaScript, React.js, Next.js, Tailwind CS
 
 Internship Experienc:
 1)Tellis Techology from  june 2025 to july 2025
-During my internship at Tellis Technology, I developed responsive web applications using the MERN stack (MongoDB, Express.js, React, Node.js) and integrated 
+During my internship at Tellis Technology, I developed responsive web applications using the MERN stack (MongoDB, Express.js, React, Node.js,Next.js ,TailwindCSS) and integrated 
 AI tools to enhance user interaction and functionality. I collaborated with the development team to design and implement animated, modern user interfaces and 
 AI-based features such as chatbot support and content generation through third-party APIs. This experience allowed me to gain hands-on expertise in full-stack 
 development, API integration, and deploying projects using modern tools and version control systems like Git and GitHub, while working in a collaborative and 
@@ -25,16 +25,16 @@ performance.
 
 Projects:
 1)Ai Agent Agency  Link:https://tellis-ai-1uog.vercel.app/
-This MERN stack project is a modern, visually appealing website developed for an agency to showcase its services. Designed with Aceternity and 
+Tech Stack:MongoDB, Express.js, React, Node.js, Next.js ,TailwindCSS
+This MERN stack Next.js project is a modern, visually appealing website developed for an agency to showcase its services. Designed with Aceternity and 
 shadcn-based UI components, the interface emphasizes smooth animations, clean layouts, and an engaging user experience. The site features responsive design, 
 interactive elements, and a focus on presenting the agency’s offerings in a professional yet creative way. Built with the MERN stack for scalability and performance, 
 it combines strong frontend aesthetics with a robust backend foundation to deliver a polished and impactful web presence.
-2 )Teams Clone link: https://gotellis.vercel.app/
-This project is a Next.js and Tailwind CSS-based frontend application designed for companies to efficiently manage and monitor employees. 
-Built primarily through prompting and coding, it provides an intuitive interface for key features such as real-time chat, attendance tracking, project 
-assignment, screen monitoring, and employee management. The platform enables organizations to streamline communication, assign and monitor tasks, and 
-ensure productivity through an engaging and responsive UI. While the current version focuses on the frontend, it lays a strong foundation for integrating backend 
-services and advanced functionalities in the future.
+
+2 )Yatra Bundle Link:https://yatra-bundles.vercel.app/
+Developed a full-featured travel booking platform using nextjs,Tailwind Css and MernStack where users can explore destinations, compare packages, and book trips seamlessly. 
+The project includes destination search, package filtering, and secure booking functionality, providing users with a smooth and engaging 
+experience. Built with modern web technologies for performance and responsive design.
 
 Open Source Contribution:
 I have actively contributed to open-source projects through well-known programs such as GirlScript Summer of Code (GSSOC) 2024 and Hacktoberfest, and I am 
@@ -46,6 +46,7 @@ contributing meaningfully to the open-source ecosystem.
 Schooling:
 10th CBSE Board from jawahar Navoday Vidyalaya Bhiwani in 2019-2020.
 12th CBSE Board from jawahar Navoday Vidyalaya Bhiwani in 2021-2022.
+
 Important Links:
 Portfolio: https://anju-narnolia.netlify.app/
 Resume: https://drive.google.com/file/d/1LBMFgEruIBuJUaP8uqi3SViNyuxXIv-Y/view?usp=sharing
