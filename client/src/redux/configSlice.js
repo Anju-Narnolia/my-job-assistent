@@ -1,7 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// Detect if in development or production
+const isDevelopment = import.meta.env.MODE === "development";
+
 const initialState = {
-  apiBaseUrl: "https://my-job-assistent-server.onrender.com",
+  apiBaseUrl: isDevelopment 
+    ? "http://localhost:5000" 
+    : "https://my-job-assistent-server.onrender.com",
 };
 
 const configSlice = createSlice({

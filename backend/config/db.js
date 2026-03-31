@@ -11,7 +11,13 @@ export const connectDB = async () => {
       console.log("Error connecting to MongoDB", error);
     });
 
-    await mongoose.connect(`${process.env.Mongo_DB_URI}/AI_Chat_Bot`);
+    // For MongoDB Atlas (mongodb+srv), don't append database name path
+    // For local MongoDB, append the database name
+    const mongoUrl = process.env.Mongo_DB_URI.includes("mongodb+srv")
+      ? process.env.Mongo_DB_URI
+      : `${process.env.Mongo_DB_URI}/AI_Chat_Bot`;
+
+    await mongoose.connect(mongoUrl);
   } catch (error) {
     console.log("Error connecting to MongoDB", error);
   }

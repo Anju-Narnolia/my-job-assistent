@@ -11,7 +11,12 @@ const app = express();
 //middleware
 app.use(
   cors({
-    origin: ["https://my-job-assistent.vercel.app"], // your frontend domain
+    origin: [
+      "https://my-job-assistent.vercel.app",
+      "http://localhost:5173",
+      "http://localhost:3000",
+      "http://127.0.0.1:5173"
+    ], // frontend domains
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })

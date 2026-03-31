@@ -21,10 +21,10 @@ export default function Register() {
       const data = await res.json();
 
       if (data.success) {
-        alert("Registration successful, please login.");
+        console.log(data.message || "Registration successful, please login.");
         navigate("/login");
       } else {
-        alert(data.message || "Registration failed");
+        console.log(data.message || "Registration failed");
       }
     } catch (err) {
       console.log(err.message);

@@ -29,9 +29,9 @@ export default function Login() {
           navigate("/chat");
         }, 100);
 
-        alert(data.message || "Login success");
+        console.log(data.message || "Login success");
       } else {
-        alert(data.message || "Login failed");
+        console.log(data.message || "Login failed");
       }
     } catch (err) {
       console.log(err.message);
